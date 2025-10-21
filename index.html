@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título exibido na aba do navegador -->
+    <title>Volcy Salony - Desenvolvedor Web</title>
+
+    <!-- Importação do arquivo CSS principal -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <!-- ======== CABEÇALHO E MENU DE NAVEGAÇÃO ======== -->
+    <header>
+        <nav class="navbar">
+
+            <div class="nav-logo">
+                <!-- data-target usado pelo JS para navegação dinâmica -->
+                <a href="#" class="nav-link" data-target="sobre">Volcy <span>Salony</span></a>
+            </div>
+
+            <!-- Container dos links principais -->
+            <div class="nav-links-container" id="nav-links-container">
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link" data-target="sobre">Sobre mim</a></li>
+                    <li><a href="#" class="nav-link" data-target="formacao">Formação</a></li>
+                    <li><a href="#" class="nav-link" data-target="portfolio">Portfólio</a></li>
+                </ul>
+
+                <!-- Botão destacado de contato -->
+                <a href="#" class="nav-btn-contato nav-link" data-target="contato">Contato</a>
+            </div>
+
+            <!-- Ícone do menu -->
+            <div id="mobile-menu-icon" class="mobile-menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- ======== LINKS SOCIAIS LATERAIS ======== -->
+    <aside class="social-links">
+        <a href="mailto:seuemail@exemplo.com" target="_blank"><span>✉</span></a>
+        <a href="https://github.com/seugithub" target="_blank"><span>G</span></a>
+        <a href="https://linkedin.com/in/seulinkedin" target="_blank"><span>in</span></a>
+    </aside>
+
+
+    <!-- ======== CONTEÚDO PRINCIPAL ======== -->
+    <main>
+
+        <!-- === Seção "Sobre mim" (padrão: ativa ao carregar) === -->
+        <section id="sobre" class="secao-conteudo active">
+            <div class="sobre-container">
+                <div class="sobre-texto">
+                    <h1>Olá, eu sou Volcy Salony.</h1>
+                    
+                    <!-- Descrição pessoal -->
+                    <p class_description="descricao-texto">
+                        Sou um desenvolvedor web dedicado com um talento criativo
+                        e uma propensão para transformar linhas de código em experiências
+                        online cativantes. Minha jornada no mundo digital começou
+                        anos atrás e, desde então, venho aprimorando minhas habilidades
+                        em desenvolvimento.
+                    </p>
+
+                    <!-- Botão que leva à seção de portfólio -->
+                    <a href="#" class="btn-principal nav-link" data-target="portfolio">Veja meus trabalhos</a>
+                </div>
+
+                <!-- Imagem pessoal -->
+                <div class="sobre-imagem">
+                    <img src="images/perfil.png" alt="Foto de Volcy Salony">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- === Seção "Formação" === -->
+        <section id="formacao" class="secao-conteudo">
+            <h2>Formação</h2>
+            <div class="formacao-conteudo">
+
+                <!-- Coluna 1: Formação Educacional -->
+                <div class="formacao-item">
+                    <h3>Formação Educacional</h3>
+                    <ul>
+                        <li><strong>Engenharia de Software</strong> - Uninter (2024 - 2028)</li>
+                        <li><strong>Técnico em Informática</strong> - Collatech Info (2018 - 2019)</li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 2: Cursos e Certificações -->
+                <div class="formacao-item">
+                    <h3>Cursos e Certificações</h3>
+                    <ul>
+                        <li>Desenvolvimento Front end - Udemy</li>
+                        <li>Desenvolvimento FullStack - FullStack Pro</li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Idiomas -->
+                <div class="formacao-item">
+                    <h3>Idiomas</h3>
+                    <ul>
+                        <li>Frances- Nativo</li>
+                        <li>Inglês - Intermediário</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- === Seção "Portfólio" === -->
+        <section id="portfolio" class="secao-conteudo">
+            <h2>Portfólio</h2>
+            <p>Alguns dos meus trabalhos recentes.</p>
+
+            <!-- Grade com os projetos -->
+            <div class="portfolio-grid">
+
+                <!-- Projeto 1 -->
+                <div class="portfolio-item">
+                    <img src="images/projeto1.jpg" alt="Preview do Projeto 1">
+                    <h3>Projeto 1: Landing Page</h3>
+                    <p>Uma landing page responsiva para um cliente fictício.</p>
+                    <a href="#" target="_blank">Ver Projeto</a>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="portfolio-item">
+                    <img src="images/projeto2.jpg" alt="Preview do Projeto 2">
+                    <h3>Projeto 2: Site Institucional</h3>
+                    <p>Site completo para uma pequena empresa.</p>
+                    <a href="#" target="_blank">Ver Projeto</a>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="portfolio-item">
+                    <img src="images/projeto3.png" alt="Preview do Projeto 3">
+                    <h3>Projeto 3: Calculadora</h3>
+                    <p>Uma calculadora feita com HTML, CSS e JavaScript puro.</p>
+                    <a href="#" target="_blank">Ver Projeto</a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- === Seção "Contato" === -->
+        <section id="contato" class="secao-conteudo">
+            <h2>Contato</h2>
+            <p>Vamos conversar! Envie-me uma mensagem.</p>
+
+            <!-- Formulário de contato -->
+            <form id="contact-form">
+                <!-- Campo: Nome -->
+                <div class="form-grupo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+                </div>
+
+                <!-- Campo: E-mail -->
+                <div class="form-grupo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+                </div>
+
+                <!-- Campo: Mensagem -->
+                <div class="form-grupo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem..."></textarea>
+                </div>
+
+                <!-- Mensagem de validação (sucesso/erro) -->
+                <div id="form-message"></div>
+
+                <!-- Botão de envio -->
+                <button type="submit" class="btn-principal">Enviar Mensagem</button>
+            </form>
+        </section>
+
+    </main>
+
+
+    <!-- ======== RODAPÉ ======== -->
+    <footer>
+        <p>&copy; 2025 Volcy Salony. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <!-- ======== SCRIPT PRINCIPAL ======== -->
+    <script src="script.js"></script>
+</body>
+
+</html>

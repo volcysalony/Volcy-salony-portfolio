@@ -1,0 +1,489 @@
+/* ==========================================================
+   PORTFÓLIO INTERATIVO — ESTILOS PRINCIPAIS (estilo.css)
+   ----------------------------------------------------------
+   Estrutura:
+   1. Configurações globais e variáveis
+   2. Cabeçalho e navegação
+   3. Links sociais laterais
+   4. Exibição de seções (navegação dinâmica)
+   5. Estilos das seções
+   6. Rodapé
+   7. Responsividade (Media Queries)
+   ========================================================== */
+
+
+/* ==========================================================
+   1. VARIÁVEIS DE COR E ESTILOS GLOBAIS
+   ----------------------------------------------------------
+   Define cores, fonte padrão e resets básicos para o layout.
+========================================================== */
+
+/* Fonte Google (opcional, mas dá um visual moderno) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --cor-fundo: #000000;
+    --cor-texto-principal: #FFFFFF;
+    --cor-texto-secundario: #a0a0a0;
+    --cor-primaria: #f0c42d;
+    --cor-fundo-item: #1a1a1a;
+}
+
+/* Reset básico + aplicação da fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Suaviza o scroll das âncoras */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Cor de fundo e compensação do header fixo */
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    padding-top: 80px;
+}
+
+/* Links e listas */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+/* ==========================================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ----------------------------------------------------------
+   Contém o menu principal, logo e botão de contato.
+   Inclui também o menu "hamburger" para mobile.
+========================================================== */
+
+header {
+    width: 100%;
+    padding: 20px 5%;
+    background-color: var(--cor-fundo);
+    border-bottom: 1px solid #222;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo do topo */
+.nav-logo a {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-texto-principal);
+}
+.nav-logo a span {
+    color: var(--cor-primaria);
+    font-weight: 400;
+}
+
+/* Container dos links do menu */
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Lista principal do menu */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+/* Links do menu */
+.nav-menu a {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--cor-texto-secundario);
+    transition: color 0.3s ease;
+}
+.nav-menu a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Botão de contato (destaque) */
+.nav-btn-contato {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    font-weight: 600;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.nav-btn-contato:hover {
+    background-color: var(--cor-texto-principal);
+    color: var(--cor-fundo);
+}
+
+/* Ícone de menu "hamburger" — aparece apenas no mobile */
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+}
+.mobile-menu-icon .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--cor-texto-principal);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+/* ==========================================================
+   3. LINKS SOCIAIS LATERAIS
+   ----------------------------------------------------------
+   Ícones fixos na lateral direita da tela.
+========================================================== */
+.social-links {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 100;
+    background-color: var(--cor-fundo-item);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.social-links a {
+    font-size: 1.5rem;
+    color: var(--cor-texto-secundario);
+    transition: color 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--cor-primaria);
+}
+
+
+
+/* ==========================================================
+   4. LÓGICA DE NAVEGAÇÃO (MOSTRAR/ESCONDER SEÇÕES)
+   ----------------------------------------------------------
+   Controla quais seções ficam visíveis de acordo com o JS.
+========================================================== */
+.secao-conteudo {
+    display: none;
+    padding: 50px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(100vh - 80px - 60px);
+}
+.secao-conteudo.active {
+    display: block;
+}
+
+
+
+/* ==========================================================
+   5. ESTILOS DAS SEÇÕES
+   ----------------------------------------------------------
+   Inclui as seções: Sobre, Formação, Portfólio e Contato.
+========================================================== */
+
+/* --- Seção "Sobre mim" --- */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+.sobre-texto {
+    flex: 1;
+}
+.sobre-texto .subtitulo-pequeno {
+    color: var(--cor-texto-secundario);
+    font-weight: 300;
+}
+.sobre-texto h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.sobre-texto p {
+    font-size: 1.1rem;
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.sobre-imagem {
+    flex-basis: 400px;
+}
+.sobre-imagem img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* Botões principais do site */
+.btn-principal {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+.btn-principal:hover {
+    background-color: var(--cor-texto-principal);
+    color: var(--cor-fundo);
+}
+
+/* --- Títulos e textos gerais das seções --- */
+.secao-conteudo h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.secao-conteudo > p {
+    text-align: center;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* --- Seção "Formação" --- */
+.formacao-conteudo {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+.formacao-item {
+    background-color: var(--cor-fundo-item);
+    padding: 30px;
+    border-radius: 8px;
+    flex: 1;
+}
+.formacao-item h3 {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+.formacao-item li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--cor-texto-secundario);
+}
+
+/* --- Seção "Portfólio" --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+.portfolio-item {
+    background-color: var(--cor-fundo-item);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+.portfolio-item img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+.portfolio-item h3 {
+    font-size: 1.3rem;
+    padding: 15px 20px 5px 20px;
+}
+.portfolio-item p {
+    color: var(--cor-texto-secundario);
+    padding: 0 20px 15px 20px;
+}
+.portfolio-item a {
+    display: block;
+    padding: 15px 20px;
+    background-color: #252525;
+    text-align: center;
+    font-weight: 600;
+    color: var(--cor-primaria);
+    transition: all 0.3s ease;
+}
+.portfolio-item a:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+}
+
+/* --- Seção "Contato" --- */
+#contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--cor-fundo-item);
+    padding: 40px;
+    border-radius: 8px;
+}
+.form-grupo {
+    margin-bottom: 20px;
+}
+.form-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-texto-secundario);
+}
+.form-grupo input,
+.form-grupo textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #050505;
+    color: var(--cor-texto-principal);
+    font-size: 1rem;
+}
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+}
+#form-message {
+    margin: 15px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+
+/* ==========================================================
+   6. RODAPÉ
+   ----------------------------------------------------------
+   Parte inferior com direitos autorais e estilo discreto.
+========================================================== */
+footer {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: var(--cor-fundo-item);
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+    height: 60px;
+    border-top: 1px solid #222;
+}
+
+
+
+/* ==========================================================
+   7. MEDIA QUERIES (RESPONSIVIDADE)
+   ----------------------------------------------------------
+   Ajusta o layout para tablets e celulares.
+========================================================== */
+
+/* --- Tablets (até 992px) --- */
+@media (max-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sobre-container {
+        flex-direction: column;
+    }
+    .sobre-texto {
+        text-align: center;
+    }
+    .sobre-imagem {
+        flex-basis: auto;
+        width: 70%;
+        margin-top: 20px;
+    }
+}
+
+/* --- Celulares (até 768px) --- */
+@media (max-width: 768px) {
+
+    /* Mostra o menu hamburger */
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    /* Esconde o menu desktop e posiciona o mobile */
+    .nav-links-container {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--cor-fundo);
+        position: absolute;
+        top: 80px;
+        left: 0;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #222;
+    }
+
+    /* Mostra o menu quando o JS adiciona a classe "active" */
+    .nav-links-container.active {
+        display: flex;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .nav-btn-contato {
+        width: 90%;
+        margin: 15px auto 0 auto;
+        text-align: center;
+    }
+
+    /* Ajustes visuais gerais */
+    .secao-conteudo {
+        padding: 40px 5%;
+    }
+    .sobre-texto h1 {
+        font-size: 2.5rem;
+    }
+    .formacao-conteudo {
+        flex-direction: column;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    #contact-form {
+        padding: 25px;
+    }
+
+    /* Remove os ícones sociais no mobile */
+    .social-links {
+        display: none;
+    }
+}
